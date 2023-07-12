@@ -1,5 +1,5 @@
 # FilmSeeker
-Suggests films based on a users preferences
+Suggests films based on a user's preferences
 
 Demo here:
 https://jakemorgan.co.uk/filmseeker/filmseeker
