@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>FilmSeeker</title>
+    <!-- Include Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+
+    <style>
+        /* Add a dark theme */
+        body {
+            background-color: #121212;
+            color: white;
+        }
+        /* Style for selected movie */
+        .selected {
+            opacity: 0.5;
+        }
+
+		@keyframes dealCards {
+		  0% {
+			transform: perspective(800px) rotateY(180deg) translateY(-100%);
+			opacity: 0;
+		  }
+		  50% {
+			transform: perspective(800px) rotateY(90deg) translateY(-100%);
+			opacity: 0.5;
+		  }
+		  100% {
+			transform: perspective(800px) rotateY(0deg) translateY(0);
+			opacity: 1;
+		  }
+		}
+
+		.card {
+		  animation-name: dealCards;
+		  animation-duration: 1s;  // adjust this as needed
+		}
+
+        /* Custom modal styles */
+		.modal-custom {
+			position: fixed;
+			z-index: 1050;
+			display: none;
+			overflow: auto;
+			width: 100%;
+			height: 100%;
+			top: 0;
+			left: 0;
+			background-color: rgba(0,0,0,0.4);
+		}
+
+		.modal-content-custom {
+			background-color: #fefefe;
+			margin: 5% auto;
+			padding: 20px;
+			border: 1px solid #888;
+			width: 50%; /* Adjust width here */
+		}
+
+		.close-custom {
+			color: #aaa;
+			float: right;
+			font-size: 28px;
+			font-weight: bold;
+		}
+
+		.close-custom:hover,
+		.close-custom:focus {
+			color: black;
+			text-decoration: none;
+			cursor: pointer;
+		}
+		
+		.modal-content-custom img {
+			max-width: 50%;
+			max-height: 200px;
+		}
+		
+		.rating-box {
+			display: inline-block;
+			width: 30px;
+			height: 30px;
+			line-height: 30px;  /* Vertically center the text in the box */
+			background-color: yellow;
+			color: black;
+			border-radius: 50%;  /* Make the box round */
+			text-align: center;
+			margin-right: 5px;  /* Add some space between the box and the stars */
+			font-size: 0.8em;   /* Make the text a bit smaller */
+		}
+
+    </style>
+</head>
+<body>
+    <div class="container mt-3">
+        <h1>FilmSeeker</h1>
+        <p>Select 10 movies you like and we will recommend more for you!</p>
+        <div id="movie-grid" class="row"></div>
+    </div>
+    <!-- Custom Modal for movie info -->
+    <div id="movieInfo" class="modal-custom">
+        <div class="modal-content-custom">
+            <span class="close-custom">&times;</span>
+            <div id="modal-body"></div>
+            <button type="button" class="btn btn-danger" id="removeButton">Already seen</button>
+        </div>
+    </div>
+    <!-- Include jQuery and Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    <!-- Include app.js -->
+    <script src="app.js"></script>
+</body>
+</html>
