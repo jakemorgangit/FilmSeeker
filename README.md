@@ -16,3 +16,4 @@ Todo:
 * Make film grid smaller
 * Reduce user selection from 10 to 5
 * Hook into a DB backend, with the ability for a user to create an account and add movies their "seen list", "liked", "loved", "disliked" and "hated".  Suggestion engine can then take these lists into account and refine the recommendations.
+* Instead of presenting the user with a large grid of 100 films, have a single film displayed.  The user can then choose from a few options below the film thumbnail: - haven't seen, loved, liked, meh, disliked, hated.  Their response is logged and then next film is shown.  Once the engine has enough responses to build a good enough recommendation, the recommendations will be displayed to the user.
