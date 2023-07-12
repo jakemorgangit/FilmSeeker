@@ -3,7 +3,7 @@ Suggests films based on a user's preferences
 
 Demo here:
 
-https://jakemorgan.co.uk/filmseeker/filmseeker
+https://jakemorgan.co.uk/projects/filmseeker
 
 Uses TMDB API.
 
